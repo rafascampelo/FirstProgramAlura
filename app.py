@@ -31,7 +31,10 @@ def opcao_invalida():
 
 def exibir_subtitulo(texto):
     os.system('cls')
+    linha = '*' * (len(texto))
+    print(linha)
     print(texto)
+    print(linha)
     print()
 
 
@@ -68,7 +71,7 @@ def ativar_restaurante():
         if nome_restaurante == restaurante['nome']:
             restaurante_encontrado = True
             restaurante['ativo'] = not restaurante['ativo']
-            mensagem = f'o restaurante{nome_restaurante} foi ativado com sucesso' if restaurante[
+            mensagem = f'o restaurante {nome_restaurante} foi ativado com sucesso' if restaurante[
                 'ativo'] else f'o restaurante {nome_restaurante} foi desativado com sucesso'
             print(mensagem)
     if not restaurante_encontrado:
