@@ -12,28 +12,34 @@ def exibir_opcoes():
     print('4.Sair \n')
 
 def finalizar_app():
-    os.system('cls')
-    print('Encerrando o programa\n')
+    exibir_subtitulo('Encerrando o programa\n')
 
+def voltar_ao_menu_principal():
+    input('Digite uma tecla para voltar ao menu principal')
+    main()
 
 def opcao_invalida():
     print('opção inválida!\n')
-    input('Digite uma tecla para voltar ao menu principal')
-    main()
+    voltar_ao_menu_principal()
 
+def exibir_subtitulo(texto):
+    os.system('cls')
+    print(texto)
+    print()
 
 def cadastrar_novo_restaurante():
-    os.system('cls')
-    print('cadastro de novos restaurantes \n')
+    exibir_subtitulo('cadastro de novos restaurantes')
     nome_do_restaurante = input("digite o nome do restaurante:")
     restaurantes.append(nome_do_restaurante)
-    print(f'cadastrado {nome_do_restaurante} com sucesso')
-    input('Digite uma tecla para voltar ao menu principal')
-    main()
+    print(f'cadastrado .{nome_do_restaurante} com sucesso')
+    voltar_ao_menu_principal()
 
 def listar_restaurante ():
-    pass
-
+    exibir_subtitulo('Listando restaurantes \n')
+    
+    for restaurante in restaurantes:
+        print(f'{restaurante}') 
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
     try:
