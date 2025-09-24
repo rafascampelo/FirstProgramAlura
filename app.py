@@ -46,7 +46,7 @@ def cadastrar_novo_restaurante():
     dados_do_restaurante = {'nome': nome_do_restaurante,
                             'categoria': categoria, 'ativo': False}
     restaurantes.append(dados_do_restaurante)
-    print(f'cadastrado .{nome_do_restaurante} com sucesso!')
+    print(f'cadastrado {nome_do_restaurante} com sucesso!')
     voltar_ao_menu_principal()
 
 
@@ -74,8 +74,10 @@ def ativar_restaurante():
             mensagem = f'o restaurante {nome_restaurante} foi ativado com sucesso' if restaurante[
                 'ativo'] else f'o restaurante {nome_restaurante} foi desativado com sucesso'
             print(mensagem)
+            voltar_ao_menu_principal()
     if not restaurante_encontrado:
         print('O restaurante não foi encontrado')
+        voltar_ao_menu_principal()
 
 
 def escolher_opcao():
